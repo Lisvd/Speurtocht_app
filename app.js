@@ -19,7 +19,7 @@ function renderHome(){
   const collected = tasks.map(t=>done(t.id)?t.letter:'_').join(' ');
   const complete = tasks.every(t=>done(t.id));
   app.innerHTML = `<div class="wrap sparkle"><section class="hero"><h1 class="title">Jaley-ann's<br>Dumpling Mystery Quest</h1>${mascot('mascot heroMascot')}</section>
-  <section class="card intro">Welkom bij Jaley-ann's mystery dumpling speurtocht!<br>Vind de lintjes en open één van de stoommandjes, voer de opdrachten op en verzamel alle 9 letters.<br>maar pas op: vind geen aangebrande dumpling want dan .....</section>
+  <section class="card intro">Welkom bij Jaley-ann's mystery dumpling speurtocht!<br>Vind de lintjes en open één van de stoommandjes, voer de opdrachten uit en verzamel alle 9 letters.<br>maar pas op: vind geen aangebrande dumpling want dan ..... dan moet je snel zijn!!</section>
   <section class="grid">${tasks.map(t=>`<button class="taskbtn ${done(t.id)?'done':''}" onclick="renderTask(${t.id})"><span>🥟 Opdracht ${t.id}</span><span>${done(t.id)?'✓':'›'}</span></button>`).join('')}</section>
   <section class="card"><strong>Verzamelde letters:</strong><div class="letters">${collected}</div></section>
   ${complete?`<section class="card final">🏆 Missie voltooid!<br><br><button onclick="renderFinal()">Toon locatie van de prijs</button></section>`:''}
